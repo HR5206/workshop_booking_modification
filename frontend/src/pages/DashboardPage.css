@@ -1,0 +1,178 @@
+.dashboard-page {
+    /* Main container is already padded by Layout.css main-content */
+}
+
+.dashboard-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    color: var(--text-muted);
+}
+
+.dashboard-error {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background: var(--error-50);
+    color: var(--error-600);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--error-100);
+}
+
+/* ── Header ── */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--space-8);
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.dashboard-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.dashboard-subtitle {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+}
+
+/* ── Empty State ── */
+.dashboard-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-12) var(--space-6);
+    background: white;
+    border-radius: var(--radius-xl);
+    border: 1px dashed var(--border-medium);
+}
+
+.empty-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+}
+
+.dashboard-empty h3 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.dashboard-empty p {
+    color: var(--text-secondary);
+    max-width: 400px;
+}
+
+/* ── Grid & Cards ── */
+.workshop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-6);
+}
+
+.workshop-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.workshop-card {
+    border: 1px solid var(--border-light);
+    height: 100%;
+}
+
+.workshop-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4);
+    background: var(--bg-card-hover);
+    border-bottom: 1px solid var(--border-light);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.ws-type {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--primary-600);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ws-type .material-icons-outlined {
+    font-size: 16px;
+}
+
+.workshop-card-body {
+    padding: var(--space-4);
+}
+
+.ws-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+.ws-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.ws-meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.ws-meta-item .material-icons-outlined {
+    font-size: 18px;
+    color: var(--text-muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .dashboard-header {
+        align-items: flex-start;
+        margin-bottom: var(--space-6);
+    }
+    
+    .dashboard-title {
+        font-size: var(--text-xl);
+    }
+    
+    .workshop-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header {
+        gap: var(--space-2);
+    }
+    
+    .dashboard-subtitle {
+        font-size: var(--text-sm);
+    }
+    
+    .workshop-card-header, .workshop-card-body {
+        padding: var(--space-3);
+    }
+}
