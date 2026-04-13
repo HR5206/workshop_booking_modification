@@ -56,9 +56,14 @@ htmlcov/
 # Build
 build/
 
-# Images/gif
+# Images/gif (General)
 *.png
 *.gif
 *.webp
 *.jpg
 *.jpeg
+
+!screenshots/
+!screenshots/*.png
+!screenshots/*.jpg
+!screenshots/*.jpeg

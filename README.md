@@ -91,3 +91,15 @@ The most challenging part was converting the persistent sidebar into a mobile-fr
 
 ## ScreenShots
 
+| Before | After |
+| :---: | :---: |
+| **Login Page** | **Modernized Login** |
+| ![Before](screenshots/LoginPage.png) | ![After](screenshots/LoginPageModified.png) |
+| **Registration / Dashboard** | **Modernized Dashboard** |
+| ![Before](screenshots/Dashboard.png) | ![After](screenshots/DasboardModified.png) |
+| **Old Statistics** | **Modernized Reports** |
+| ![Before](screenshots/Statistics.png) | ![After](screenshots/StatisticsModified.png) |
+| **-** | **Profile Page** |
+| - | ![After](screenshots/ProfileModified.png) |
+| **-** | **Workshop Details** |
+| - | ![After](screenshots/WorkshopModified.png) |
