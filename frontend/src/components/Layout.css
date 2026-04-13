@@ -1,0 +1,225 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-page);
+}
+
+.app-sidebar {
+    width: 260px;
+    background: var(--bg-sidebar);
+    box-shadow: var(--shadow-sm); 
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: var(--space-8) var(--space-6) var(--space-6);
+}
+
+.sidebar-brand {
+    text-decoration: none;
+}
+
+.sidebar-brand h2 {
+    color: var(--primary-700);
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: 0 var(--space-4);
+    margin-top: var(--space-6);
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: var(--space-3) var(--space-4);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-size: var(--text-sm);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+}
+
+.sidebar-link:hover {
+    background: var(--bg-page);
+    color: var(--text-primary);
+}
+
+.sidebar-link.active {
+    background: var(--primary-50);
+    color: var(--primary-600);
+}
+
+.nav-icon {
+    font-size: 20px;
+}
+
+.sidebar-footer {
+    padding: var(--space-6) var(--space-4);
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.sidebar-section-title {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    padding: 0 var(--space-4) var(--space-2);
+}
+
+.logout-btn {
+    margin-bottom: var(--space-6);
+}
+
+.sidebar-user-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-2);
+    margin-top: var(--space-4);
+    border-top: 1px solid var(--border-light);
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary-100);
+    color: var(--primary-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-base);
+    font-weight: 800;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.user-role {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.main-content {
+    flex-grow: 1;
+    max-width: 1400px;
+    padding: var(--space-10) var(--space-12);
+}
+
+.mobile-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background: var(--bg-sidebar);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    padding: 0 var(--space-4);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+}
+
+.menu-toggle:hover {
+    background: var(--bg-page);
+}
+
+.mobile-brand h2 {
+    font-size: 1.25rem;
+    color: var(--primary-700);
+    margin: 0;
+    letter-spacing: 0.1em;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 998;
+    animation: fadeIn 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+    .mobile-header {
+        display: flex;
+    }
+
+    .app-sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 999;
+        transform: translateX(-100%);
+        transition: transform var(--transition-normal);
+        box-shadow: var(--shadow-xl);
+        width: 280px;
+    }
+
+    .app-sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-top: 64px;
+        padding: var(--space-6);
+    }
+}
+
+@media (max-width: 640px) {
+    .main-content {
+        padding: var(--space-4);
+    }
+}
